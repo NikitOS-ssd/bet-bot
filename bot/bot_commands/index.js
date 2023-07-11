@@ -1,11 +1,11 @@
+const Translate = require('../../core/localizations/translate')
+
 async function Start(ctx) {
-	const response = `Приветствую, ${ctx.message.from.first_name}!
-	${CommandsMessages.StartMessageForUser.message1}`
+	const response = Translate.translate("startMessage", 'ru')
 	
 		await ctx.reply(response)
-	
-		await ctx.replyWithPhoto(`${ClinicObj.image}`)
-	
-		await ctx.reply(CommandsMessages.StartMessageForUser.message2, Keyboard.startKeyboard)
-	
+}
+
+module.exports = {
+	Start
 }

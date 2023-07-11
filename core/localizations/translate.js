@@ -1,5 +1,5 @@
-import en from './en.json';
-import ru from './ru.json';
+const ru = require('./ru')
+const en = require('./en')
 
 function translate(key, language) {
   let langData = {};
