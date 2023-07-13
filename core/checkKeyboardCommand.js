@@ -3,6 +3,7 @@ const ru = require("../core/localizations/ru.json")
 
 function checkKeyboardCommand(message) {
   try {
+    console.log("Start")
     if (!message) {
       return "Message not found"
     }

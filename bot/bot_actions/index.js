@@ -1,8 +1,8 @@
-const { translate } = require("../../core/localizations/translate");
-const { SettingsKeyboard } = require("../keyboards/actions_keyboards");
+// const { translate } = require("../../core/localizations/translate");
+// const { SettingsKeyboard } = require("../keyboards/actions_keyboards");
 
-const lang = process.env.USERS_LANG
+// const lang = process.env.USER_LANG
 
 
-module.exports = {
-}
+// module.exports = {
+// }

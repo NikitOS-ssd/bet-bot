@@ -1,7 +1,7 @@
 const ru = require('./ru')
 const en = require('./en')
 
-function translate(key, language) {
+function translate(key, language = 'ru') {
   let langData = {};
   if (language === 'en') {
     langData = en;

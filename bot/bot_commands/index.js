@@ -1,13 +1,18 @@
 const { SettingsKeyboard } = require('../keyboards/actions_keyboards')
 const { CommandKeyboard } = require('../keyboards/command_keyboard')
 const { translate } = require('../../core/localizations/translate')
+require("dotenv").config()
 
 const lang = process.env.USER_LANG
 
 function Start(ctx) {
-	const response = translate("startMessage", lang)
+	try {
+		const response = translate("startMessage", lang)
 
-	ctx.reply(response, CommandKeyboard)
+		ctx.reply(response, CommandKeyboard)
+	} catch {
+		console.log("Something went wrong")
+	}
 }
 
 function GetSettings(ctx) {
