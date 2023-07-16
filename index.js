@@ -1,7 +1,7 @@
 const { Telegraf } = require("telegraf")
 const BotCommand = require('./bot/bot_commands');
 // const BotActions = require("./bot/bot_actions");
-const { checkKeyboardMessage } = require("./core/checkKeyboardCommand")
+const { checkKeyboardCommand, setKeyboardForButtonCommand } = require("./core/checkKeyboardCommand")
 
 require("dotenv").config()
 
@@ -18,10 +18,9 @@ bot.on('text', async (ctx) => {
   try {
     console.log("Task tracker")
     const userMessage = ctx.message.text
-    const command = checkKeyboardMessage(userMessage)
+    const command = checkKeyboardCommand(userMessage)
   
-    console.log(command)
-    await ctx.reply(command)
+    setKeyboardForButtonCommand(ctx, command)
   } catch {
     ctx.reply("Something went wrong")
   }
