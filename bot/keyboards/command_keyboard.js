@@ -12,12 +12,12 @@ const CommandKeyboard = Markup.keyboard([
 		CreateMarkup({ text: translate('sport', lang), callback: '/get_sport' }),
 	],
 	[
-		CreateMarkup({ text: translate('profile', lang), callback: '/get_profile' }),
+		// CreateMarkup({ text: translate('profile', lang), callback: '/get_profile' }),
 		CreateMarkup({ text: translate('settings', lang), callback: '/get_settings' }),
 	],
 	[
-		CreateMarkup({ text: translate('balance', lang), callback: '/get_balance' }),
-		CreateMarkup({ text: translate('bonus', lang), callback: '/get_bonus' }),
+		// CreateMarkup({ text: translate('balance', lang), callback: '/get_balance' }),
+		// CreateMarkup({ text: translate('bonus', lang), callback: '/get_bonus' }),
 	],
 	[
 		CreateMarkup({ text: translate('info', lang), callback: '/get_info' }),

@@ -7,6 +7,16 @@
   "bonus": "💸 Bonus",
   "info": "ℹ️ Information ℹ️",
 
-  
-  "startMessage": "Select the required section at the bottom of the screen 👇"
+  "startMessage": "Select the required section at the bottom of the screen 👇",
+
+  "games_only_text": "Games: ",
+  "all_games": "All games",
+  "sport_only_text": "Sport: ",
+  "express": "Express",
+  "top_rating": "Top rating",
+  "results": "Results",
+  "upcoming_matches": "Upcoming matches",
+
+  "settings_only_text": "Settings",
+  "languages": "🌍 Languages"
 }

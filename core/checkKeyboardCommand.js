@@ -4,13 +4,15 @@ const { Markup } = require("telegraf");
 const { CreateMarkup } = require("./createMarkup");
 const { translate } = require("./localizations/translate");
 
+const LANG = process.env.USER_LANG;
+
 function checkKeyboardCommand(message) {
   try {
     if (!message) {
       return "Message not found";
     }
 
-    const jsonData = fs.readFileSync(path.resolve("core/localizations/ru.json"), 'utf-8');
+    const jsonData = fs.readFileSync(path.resolve("core/localizations/en.json"), 'utf-8');
     const data = JSON.parse(jsonData);
 
     const result = Object.keys(data).find(key => data[key] === message);
@@ -30,21 +32,21 @@ function setKeyboardForButtonCommand(ctx, settingsName) {
   try {
     switch (settingsName) {
       case 'game':
-        return ctx.reply("Игры: ", Markup.inlineKeyboard([
-          CreateMarkup({ text: "Все игры", url: "https://bwanabet.com/en/games" })
+        return ctx.reply(translate("games_only_text", LANG), Markup.inlineKeyboard([
+          CreateMarkup({ text: translate("all_games", LANG), url: "https://bwanabet.com/en/games" })
         ]))
       case 'sport':
-        return ctx.reply("Спорт: ", Markup.inlineKeyboard([
-          [CreateMarkup({ text: "Экспресс", url: "https://bwanabet.com/en/sport/express" })],
-          [CreateMarkup({ text: "Топ", url: "https://bwanabet.com/en/sport/top" })],
-          [CreateMarkup({ text: "Результаты", url: "https://bwanabet.com/en/sport/results" })],
-          [CreateMarkup({ text: "Ближайшие матчи", url: "https://bwanabet.com/en/sport/upcoming" })],
+        return ctx.reply(translate("sport_only_text", LANG), Markup.inlineKeyboard([
+          [CreateMarkup({ text: translate("express", LANG), url: "https://bwanabet.com/en/sport/express" })],
+          [CreateMarkup({ text: translate("top_rating", LANG), url: "https://bwanabet.com/en/sport/top" })],
+          [CreateMarkup({ text: translate("results", LANG), url: "https://bwanabet.com/en/sport/results" })],
+          [CreateMarkup({ text: translate("upcoming_matches", LANG), url: "https://bwanabet.com/en/sport/upcoming" })],
         ]))
       case 'profile':
         return ctx.reply("Ваш профиль")
       case 'settings':
-        return ctx.reply("Настройки", Markup.inlineKeyboard([
-          CreateMarkup({ text: translate("languages", 'ru'), callback: "changeLanguage" })
+        return ctx.reply(translate("settings_only_text", LANG), Markup.inlineKeyboard([
+          CreateMarkup({ text: translate("languages", LANG), callback: "changeLanguage" })
         ]))
       case 'balance':
         return ctx.reply("Ваш баланс")

@@ -1,8 +1,18 @@
-// const { translate } = require("../../core/localizations/translate");
-// const { SettingsKeyboard } = require("../keyboards/actions_keyboards");
+const { Markup } = require("telegraf");
+const { translate } = require("../../core/localizations/translate");
+const { SettingsKeyboard } = require("../keyboards/actions_keyboards");
+const { CreateMarkup } = require("../../core/createMarkup");
 
-// const lang = process.env.USER_LANG
+const lang = process.env.USER_LANG
 
+function changeLanguageAction(ctx) {
+  ctx.reply("Choose language: ", Markup.inlineKeyboard([
+    CreateMarkup({ text: "English", callback: "setEnglish" }),
+    CreateMarkup({ text: "Russian", callback: "setEnglish" }),
+    CreateMarkup({ text: "French", callback: "setEnglish" }),
+  ]))
+}
 
-// module.exports = {
-// }
+module.exports = {
+  changeLanguageAction,
+}

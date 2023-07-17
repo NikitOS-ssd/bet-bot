@@ -1,5 +1,6 @@
 const { Telegraf } = require("telegraf")
 const BotCommand = require('./bot/bot_commands');
+const BotActions = require('./bot/bot_actions');
 // const BotActions = require("./bot/bot_actions");
 const { checkKeyboardCommand, setKeyboardForButtonCommand } = require("./core/checkKeyboardCommand")
 
@@ -13,6 +14,8 @@ bot.start(BotCommand.Start)
 //   console.log("Какая-то хуйня полнейшая")
 //   ctx.reply("DKK")
 // })
+
+bot.action('changeLanguage', BotActions.changeLanguageAction)
 
 bot.on('text', async (ctx) => {
   try {
