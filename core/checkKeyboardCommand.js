@@ -4,7 +4,7 @@ const { Markup } = require("telegraf");
 const { CreateMarkup } = require("./createMarkup");
 const { translate } = require("./localizations/translate");
 
-const LANG = process.env.USER_LANG;
+const LANG = process.env.USER_LANG || 'en'
 
 const INFO_TEXT = `
 OUR MISSION

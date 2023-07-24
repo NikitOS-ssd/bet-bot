@@ -3,7 +3,7 @@ const { CreateMarkup } = require("../../core/createMarkup")
 const { translate } = require("../../core/localizations/translate")
 require("dotenv").config()
 
-const lang = process.env.USER_LANG
+const lang = process.env.USER_LANG || 'en'
 
 const CommandKeyboard = Markup.keyboard([
 	[

@@ -3,7 +3,7 @@ const { CommandKeyboard } = require('../keyboards/command_keyboard')
 const { translate } = require('../../core/localizations/translate')
 require("dotenv").config()
 
-const lang = process.env.USER_LANG
+const lang = process.env.USER_LANG || 'en'
 
 function Start(ctx) {
 	try {
