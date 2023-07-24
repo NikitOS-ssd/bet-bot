@@ -1,7 +1,6 @@
 const { Telegraf } = require("telegraf")
 const BotCommand = require('./bot/bot_commands');
 const BotActions = require('./bot/bot_actions');
-// const BotActions = require("./bot/bot_actions");
 const { checkKeyboardCommand, setKeyboardForButtonCommand } = require("./core/checkKeyboardCommand")
 
 require("dotenv").config()
@@ -9,11 +8,6 @@ require("dotenv").config()
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start(BotCommand.Start)
-
-// bot.command('/get_settings', function (ctx) {
-//   console.log("Какая-то хуйня полнейшая")
-//   ctx.reply("DKK")
-// })
 
 bot.action('changeLanguage', BotActions.changeLanguageAction)
 
