@@ -5,7 +5,6 @@ require("dotenv").config()
 
 const lang = process.env.USER_LANG
 
-console.log("LAAANG: ", lang)
 const CommandKeyboard = Markup.keyboard([
 	[
 		CreateMarkup({ text: translate('game', lang), callback: '/get_game' }),
